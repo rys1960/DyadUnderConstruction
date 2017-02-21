@@ -1,0 +1,183 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="{% static 'img/DyadFavicon.jpg' %}" rel="stylesheet">
+
+        <title>Fixed Top Navbar Example for Bootstrap</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="{% static 'css/navbar-fixed-top.css' %}" rel="stylesheet">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <style>
+          h1 {
+              font-size: 250%;
+              color: #000;
+          }
+
+          h2 {
+              font-size: 200%;
+          }
+          h3 {
+              font-size: 150%;
+          }
+
+          p {
+              font-size: 100%;
+          }
+
+          .navbar-static-top {
+              margin-bottom: 0px !important;
+          }
+          .jumbotron {
+              background-color: #081847;
+              color: #FFF;
+          }
+          .text-align-center {
+              text-align: center;
+
+          }
+          </style>
+
+  </head>
+
+
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+              <h1>Dyad Medical</h1>
+          </div>
+          <div class="col-sm-3 pull-right">
+              <h1><a href="mailto:info@dyadmed.com?Subject=Regarding%20Dyad%20Medical" target="_top" style='color: black;'>Contact Us</a></h1>      
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    </br>
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container"> 
+          <div class="row">
+            <div class="col-md-8">
+                <h2>Our Vision</h2>
+                <p ALIGN=JUSTIFY><h3>We strive to make medical image analysis more accurate and data driven. We achieve this by creating an intelligent imaging analytics cloud platform that unleashes real-world clinical data.</h3></p>
+                <br/><br/>
+                <div class="row">
+                
+                    <div class="col-md-2"></div>        
+                    <div class="col-md-6">        
+                        <p class='lead text-align-left'> Sign up to be notified when we launch !!</p>        
+                        <form method='POST' action=''> {% csrf_token %} <!-- POST means we are sending data, action is where we want to send it -->
+                          {{ form|crispy }}
+                          <input class='btn btn-primary' type='submit' value='Sign Up' />
+                         </form>
+                    </div>
+                </div>
+            </div>
+            <div class="center-block"">
+            </br>
+                <img src='{% static "img/heart.png" %}' class='img-responsive'/>
+            </div>
+          </div>     
+        </div> <!-- /container -->
+    </div> <!-- jumbotron -->
+    </br>
+    </br>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the jambotron -->
+      <div class="row">
+        <div class="col-md-4">
+            <p class='lead text-align-center'>Collaborate &amp; Share<br/><br/>
+              <i class="fa fa-align-center fa-users fa-5x" aria-hidden="true" style="color:red"></i>
+            </p>                
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+          <p class='lead text-align-center'>Image Analysis Apps<br/><br/>
+            <i class="fa fa-align-center fa-laptop fa-5x" aria-hidden="true" style="color:green"></i></a>
+          </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+            <p class='lead text-align-center'>Access Image Repository<br/><br/>      
+              <i class="fa fa-align-center fa-cloud-download icon-color-set fa-5x" aria-hidden="true" style="color:orange"></i></a>
+            </p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <!--=============== START THE FEATURETTES ===================-->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h3 class="featurette-heading">Stent Analysis Using Intravascular Optical Coherence Tomography</h3>
+        </div>
+        <div class="col-md-5">
+          <img src='{% static "img/StentRecon.png" %}' class="img-thumbnail" alt="Stent 3D Reconstruction" width="304" height="236" />
+          <!-- <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h3 class="featurette-heading">Plaque Characterization Using Intravascular Optical Coherence Tomography</h3>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img src='{% static "img/Calcium11.png" %}' class='img-circle' alt="Calcified Vessel" width="200" height="200"/>
+          <!-- <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h3 class="featurette-heading">Fibrous Cap Quantification Using Intravascular Optical Coherence Tomography</h3>
+        </div>
+        <div class="col-md-5">
+          <img src='{% static "img/TCFA.png" %}' class="img-thumbnail" alt="Thin Cap Heat Map" width="304" height="236" />
+          <!-- <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/holder.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+  </body>
+</html>
