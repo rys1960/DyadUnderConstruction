@@ -25,7 +25,7 @@ SECRET_KEY = 'q-2v^@l=)h6^rams)(=aa&#moq9)l=pre2dk=#s!=n=%i1w%%#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.dyadmed.com', 'dyadmed.com']
+ALLOWED_HOSTS = ['www.dyadmed.com', 'dyadmed.com', '.pythonanywhere.com']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'info@dyadmed.com'
@@ -120,7 +120,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_r
 
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+    os.path.join(BASE_DIR, "../static_in_pro", "our_static"),
     #os.path.join(BASE_DIR, "static_in_env"),
     #'/var/www/static/',
 )
