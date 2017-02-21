@@ -3,6 +3,6 @@ db.sqlite3
 *.pyc
 .env
 
-ucDyad/old_settings.py
-ucDyad/settings/local.py
+ucDyad/settings/*
+ucDyad/settings_local.py
 
