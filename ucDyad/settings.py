@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'ucDyad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dyad$dyad>',
+        'NAME': 'dyad$dyad',
         'USER': 'dyad',
         'PASSWORD': 'Dyad={2016}',
         'HOST': 'dyad.mysql.pythonanywhere-services.com',
