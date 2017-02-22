@@ -87,13 +87,11 @@ WSGI_APPLICATION = 'ucDyad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dyad$dyad',
-        'USER': 'dyad',
-        'PASSWORD': 'Dyad={2016}',
-        'HOST': 'dyad.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
