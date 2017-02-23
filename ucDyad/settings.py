@@ -92,6 +92,20 @@ DATABASES = {
     }
 }
 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dyad$dyad',
+        'USER': 'dyad',
+        'PASSWORD': 'Dyad={2016}',
+        'HOST': 'dyad.mysql.pythonanywhere-services.com',
+    }
+}
+
+
+'''
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
