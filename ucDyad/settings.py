@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#print("*****************>>BASE_DIR = ", BASE_DIR)
+
 # root of project
 
 # Quick-start development settings - unsuitable for production
@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q-2v^@l=)h6^rams)(=aa&#moq9)l=pre2dk=#s!=n=%i1w%%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'info@dyadmed.com'
@@ -85,13 +85,27 @@ WSGI_APPLICATION = 'ucDyad.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dyad$dyad',
+        'USER': 'dyad',
+        'PASSWORD': 'Dyad={2016}',
+        'HOST': 'dyad.mysql.pythonanywhere-services.com',
+    }
+}
+
+
+
 
 
 # Internationalization
@@ -115,7 +129,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = "dyadmed.com/static/"
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
 
-#print("The value of root is : ", STATIC_ROOT)
+# print("The value of root is : ", STATIC_ROOT)
 
 
 STATICFILES_DIRS = (

@@ -3,6 +3,6 @@ db.sqlite3
 *.pyc
 .env
 
-ucDyad/settings/*
+ucDyad/settings_production/*
 ucDyad/settings_local.py
 
