@@ -14,6 +14,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# when working using settings folder (as oppose to the settings.py file)
+# I need to change to the parent folder of the settings directory
+# in order to get the root of the project
+BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
 #print("*****************>>BASE_DIR = ", BASE_DIR)
 # root of project
 
@@ -26,7 +30,7 @@ SECRET_KEY = 'q-2v^@l=)h6^rams)(=aa&#moq9)l=pre2dk=#s!=n=%i1w%%#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'info@dyadmed.com'
@@ -115,7 +119,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = "dyadmed.com/static/"
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
 
-#print("The value of root is : ", STATIC_ROOT)
+# print("The value of root is : ", STATIC_ROOT)
 
 
 STATICFILES_DIRS = (
